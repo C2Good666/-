@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>问答挑战</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    #quiz-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    #options button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/">首页</a>
+    <a href="/about">关于</a>
+    <a href="/quiz">问答</a>
+  </nav>
+
+  <main id="quiz-container">
+    <!-- 注册界面 -->
+    <section id="registration">
+      <h1>问答挑战赛</h1>
+      <div class="input-group">
+        <input type="text" id="player-name" placeholder="输入你的昵称" required>
+        <button id="register-btn">加入游戏</button>
+      </div>
+    </section>
+
+    <!-- 游戏大厅 -->
+    <section id="lobby" style="display:none;">
+      <h2>在线玩家</h2>
+      <ul id="player-list"></ul>
+    </section>
+
+    <!-- 问答界面 -->
+    <section id="quiz" style="display:none;">
+      <div id="question-container">
+        <h3 id="question-text"></h3>
+        <div id="options"></div>
+      </div>
+      <div id="scoreboard">
+        <p>你的分数: <span id="player-score">0</span></p>
+        <p>对手分数: <span id="opponent-score">0</span></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/quiz.js"></script>
+</body>
+</html>
